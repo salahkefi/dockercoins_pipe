@@ -1,4 +1,5 @@
 FROM 	node:4-slim
+MAINTAINER      brahim.hamdi.consult@gmail.com
 RUN 	npm install express
 RUN 	npm install redis
 COPY 	files/ /files/
