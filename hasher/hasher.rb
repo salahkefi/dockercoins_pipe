@@ -13,6 +13,6 @@ post '/' do
 end
 
 get '/' do
-    "HASHER running on #{Socket.gethostname}\n"
+	"HASHER is running ...\n"
 end
 

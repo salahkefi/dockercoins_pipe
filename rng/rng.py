@@ -15,7 +15,7 @@ urandom = os.open("/dev/urandom", os.O_RDONLY)
 
 @app.route("/")
 def index():
-    return "RNG running on {}\n".format(hostname)
+    return "RNG running ..."
 
 
 @app.route("/<int:how_many_bytes>")
