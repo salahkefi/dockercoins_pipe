@@ -1,1 +1,1 @@
-# Formation Docker - TP orchestration.
+# Docker training - orchestration Lab
