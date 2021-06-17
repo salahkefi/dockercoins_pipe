@@ -1,7 +1,0 @@
-- name: Disable swap
-  hosts: all
-  gather_facts: no
-  tasks:
-    - name: Disable swap
-      command: swapoff -a
-      become: yes
