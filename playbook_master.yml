@@ -1,0 +1,42 @@
+- name: play dockercoins
+  hosts: 192.168.205.10
+  gather_facts: no
+
+  tasks:
+    - name: Copy dockercoins.yml on master
+      copy: src=dockercoins.yml dest=/home/vagrant/ owner=vagrant group=vagrant mode=0644
+      tags:
+        - copy
+
+ 
+
+    - name: Sleep 30 sec
+      command: sleep 30
+      tags: 
+        - sleep
+
+ 
+
+    - name: Deploy dockercoins
+      command: kubectl apply -f dockercoins.yml
+      tags:
+        - deploy
+      register: deploy_result
+
+ 
+
+    - name: Affiche résultat de déploiment
+      command: "echo {{ item }}"
+      with_items:
+        - "{{ deploy_result.stdout_lines }}"
+      
+    - name: Delete dockercoins
+      command: kubectl delete -f dockercoins.yml
+      tags:
+        - delete
+ 
+
+
+
+
+
